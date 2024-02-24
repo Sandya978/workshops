@@ -1,0 +1,55 @@
+apiversion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rabbitmq
+spec:
+  selector:
+    matchLabels:
+      app: rabbitmq
+  serviceName: rabbitmq
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: rabbit
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3-management-alpine
+        volumeMounts:
+        - name: rabbitmqdata
+          mountPath: /var/lib/rabbitmq
+        env:
+        - name: RABBITMQ_CONFIG_FILE
+          value: /etc/pitstop/rabbitmq.conf
+      -  name: sqlserver
+         image: mcr.microsoft.com/azure-sql-edge
+         volumeMounts:
+         - name: sqlserverdata
+           mountPath: /var/opt/mssql
+         env:
+         - name: ACCEPT_EULA
+           value: Y
+         - name: MSSQL_PID
+           value: Developer
+         - name: SA_PASSWORD
+           value: 8jkGh47hnDw89Haq8LN2  
+  volumeClaimTemplates:
+  - metadata:
+      name: rabbitmq
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          memory: 256mi
+          cpu: 500m
+  - metadata:
+      name: sqlserverdata
+    spec:
+      accessModes:  [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          memory: 256mi
+          cpu: 500m
+        
+          
