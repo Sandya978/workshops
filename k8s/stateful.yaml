@@ -41,15 +41,17 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          memory: '256mi'
-          cpu: '0.5'
+          #memory: '256mi'
+          #cpu: '0.5'
+          storage: 1Gi
   - metadata:
       name: sqlserverdata
     spec:
       accessModes:  [ "ReadWriteOnce" ]
       resources:
         requests:
-          memory: '256mi'
-          cpu: '0.5'
+          storage: 1Gi
+          #memory: '256mi'
+          #cpu: '0.5'
         
           
