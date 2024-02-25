@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: sqlserver
   serviceName: sqlserver
   replicas: 1
   template:
