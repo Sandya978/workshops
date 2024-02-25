@@ -7,7 +7,9 @@ spec:
   selector:
     app: mailserver
   ports:
-  - port: 25
-    targetPort: 25
-  - port: 80
-    targetPort: 4000
+    - name: tcp
+      port: 25
+      targetPort: 25
+    - name: tcp 
+      port: 80
+      targetPort: 4000
