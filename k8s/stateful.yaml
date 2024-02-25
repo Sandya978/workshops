@@ -16,6 +16,9 @@ spec:
       containers:
       - name: rabbitmq
         image: rabbitmq:3-management-alpine
+        ports:
+        - containerPort: 15672
+        - containerPort: 5672
         volumeMounts:
         - name: rabbitmqdata
           mountPath: /var/lib/rabbitmq
@@ -29,8 +32,6 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          #memory: '256mi'
-          #cpu: '0.5'
           storage: 1Gi
 
         
