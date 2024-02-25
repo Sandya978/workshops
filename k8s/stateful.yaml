@@ -22,18 +22,6 @@ spec:
         env:
         - name: RABBITMQ_CONFIG_FILE
           value: /etc/pitstop/rabbitmq.conf
-      -  name: sqlserver
-         image: mcr.microsoft.com/azure-sql-edge
-         volumeMounts:
-         - name: sqlserverdata
-           mountPath: /var/opt/mssql
-         env:
-         - name: ACCEPT_EULA
-           value: "Y"
-         - name: MSSQL_PID
-           value: Developer
-         - name: SA_PASSWORD
-           value: 8jkGh47hnDw89Haq8LN2  
   volumeClaimTemplates:
   - metadata:
       name: rabbitmq
@@ -44,14 +32,6 @@ spec:
           #memory: '256mi'
           #cpu: '0.5'
           storage: 1Gi
-  - metadata:
-      name: sqlserverdata
-    spec:
-      accessModes:  [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
-          #memory: '256mi'
-          #cpu: '0.5'
+
         
           

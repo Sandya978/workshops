@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sqlserver
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  serviceName: sqlserver
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sqlserver
+    spec:
+      containers:
+      - name: sqlserver
+        image: mcr.microsoft.com/azure-sql-edge
+        ports:
+        - containerPort: 1433
+        volumeMounts:
+        - name: sqlserverdata
+          mountPath: /var/opt/mssql
+        env:
+         - name: ACCEPT_EULA
+           value: "Y"
+         - name: MSSQL_PID
+           value: Developer
+         - name: SA_PASSWORD
+           value: 8jkGh47hnDw89Haq8LN2  
+  volumeClaimTemplates:
+  - metadata:
+      name: sqlserverdata
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
