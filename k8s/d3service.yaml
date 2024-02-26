@@ -4,7 +4,7 @@ metadata:
   name: VehicleManagementAPI
 spec:
   selector:
-    app: VehicleManagementAPI
+    app: VehicleManagement
   ports:
   - port: 5000
     targetPort: 5000

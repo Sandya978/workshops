@@ -11,5 +11,5 @@ spec:
       port: 25
       targetPort: 25
     - name: tcp1 
-      port: 80
-      targetPort: 4000
+      port: 4000
+      targetPort: 80

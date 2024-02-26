@@ -4,7 +4,7 @@ metadata:
   name: CustomerManagementAPI
 spec:
   selector:
-    app: CustomerManagementAPI
+    app: CustomerManagement
   ports:
   - port: 5100
     targetPort: 5100

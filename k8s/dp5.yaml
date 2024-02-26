@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: VehicleManagementAPi
+  name: WorkshopManagementAPI
 spec:
   selector:
     matchLabels:
-      app: VehicleManagementAPi
+      app: WorkshopManagementAPI
   template:
     metadata:
       labels:
-        app: VehicleManagement
+        app: WorkshopManagementAPI
     spec:
       containers:
-      - name: VehicleManagementAPI
-        image: pitstop/vehiclemanagementapi:1.0
+      - name: WorkshopManagementAPI
+        image: pitstop/workshopmanagementapi:1.0
         ports:
-        - containerPort: 5000
+        - containerPort: 5200
         env:
           - name: ASPNETCORE_ENVIRONMENT
             value: Production

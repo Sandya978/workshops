@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: CustomerManagementAPi
+  name: CustomerManagementAPI
 spec:
   selector:
     matchLabels:
-      app: CustomerManagementAPi
+      app: CustomerManagement
   template:
     metadata:
       labels:
-        app: CustomerManagementAPi
+        app: CustomerManagement
     spec:
       containers:
       - name: CustomerManagementAPi
