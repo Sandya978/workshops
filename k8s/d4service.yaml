@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: CustomerManagementAPI
+spec:
+  selector:
+    app: CustomerManagementAPI
+  ports:
+  - port: 5100
+    targetPort: 5100
