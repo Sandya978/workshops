@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: CustomerManagementAPI
+  name: CustomerManagementAPi
 spec:
   selector:
     matchLabels:
-      app: CustomerManagementAPI
+      app: CustomerManagementAPi
   template:
     metadata:
       labels:
-        app: CustomerManagementAPI
+        app: CustomerManagementAPi
     spec:
       containers:
-      - name: CustomerManagementAPI
+      - name: CustomerManagementAPi
         image: pitstop/customermanagementapi:1.0
         ports:
         - containerPort: 5100
