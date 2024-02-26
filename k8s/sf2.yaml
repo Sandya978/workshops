@@ -33,6 +33,4 @@ spec:
       name: sqlserverdata
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
+      

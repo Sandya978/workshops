@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: VehicleManagementAPI
+spec:
+  selector:
+    matchLabels:
+      app: VehicleManagementAPI
+  template:
+    metadata:
+      labels:
+        app: VehicleManagementAPI 
+    spec:
+      containers:
+      - name: VehicleManagementAPI
+        image: pitstop/vehiclemanagementapi:1.0
+        ports:
+        - containerPort: 5000
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: Production

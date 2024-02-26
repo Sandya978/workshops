@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mailserver
+  name: logserver
 spec:
   selector:
     matchLabels:
-      app: mailserver
+      app: logserver
   template:
     metadata:
       labels:
-        app: mailserver
+        app: logserver
     spec:
       containers:
-      - name: mailserver
-        image:  maildev/maildev:1.1.0
-        
+      - name: logserver
+        image: datalust/seq:latest
         ports:
-        - containerPort: 25
         - containerPort: 80
+        env:
+          - name: ACCEPT_EULA
+            value: "Y"
