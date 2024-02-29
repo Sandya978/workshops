@@ -2,15 +2,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: AuditlogService
+  name: auditlogservice
 spec:
   selector:
     matchLabels:
-      app: AuditlogService
+      app: auditlogservice
   template:
     metadata:
       labels:
-        app: AuditlogService
+        app: auditlogservice
     spec:
       containers:
       - name: auditlogservice

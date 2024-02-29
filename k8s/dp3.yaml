@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: VehicleManagementAPi
+  name: vehiclemanagement
 spec:
   selector:
     matchLabels:
-      app: VehicleManagementAPi
+      app: vehiclemanagement
   template:
     metadata:
       labels:
-        app: VehicleManagement
+        app: vehiclemanagement
     spec:
       containers:
-      - name: VehicleManagementAPI
+      - name: vehiclemanagement
         image: pitstop/vehiclemanagementapi:1.0
         ports:
         - containerPort: 5000

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: WorkshopManagementAPI
+  name: workshopmanagement
 spec:
   selector:
-    app: WorkshopManagementAPI
+    app: workshopmanagement
   ports:
   - port: 5200
     targetPort: 5200

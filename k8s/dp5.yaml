@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: WorkshopManagementAPI
+  name: workshopmanagement
 spec:
   selector:
     matchLabels:
-      app: WorkshopManagementAPI
+      app: workshopmanagement
   template:
     metadata:
       labels:
-        app: WorkshopManagementAPI
+        app: workshopmanagement
     spec:
       containers:
-      - name: WorkshopManagementAPI
+      - name: workshopmanagement
         image: pitstop/workshopmanagementapi:1.0
         ports:
         - containerPort: 5200
